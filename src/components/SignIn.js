@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const SignIn = () => {
   const navigation = useNavigate();
   const [intialState, setIntialState] = useState([]);
-   const [checkEmail, setcheckEmail] = useState([]);
+  const [checkEmail, setcheckEmail] = useState([]);
   const [user, setUser] = useState({
     email: "",
   });
@@ -26,32 +26,27 @@ const SignIn = () => {
     setIntialState(json);
     const email = intialState.map((data) => data.email);
     setcheckEmail(email);
-   
   };
 
   useEffect(() => {
     getUserData();
-     
-  }, [user,setUser]);
+  }, [user, setUser]);
 
   const handelSubmit = (e) => {
     e.preventDefault();
-   
+
     if (formValidations()) {
       if (user.email === "admin@admin.com") {
         navigation("/admin");
-      }
-      else if(checkEmail.length>0){
-         for (let i of checkEmail) {
-         
-             if (i  === user.email) {
-               navigation("/user");
-              
-             } 
-             else{
-              alert("Invalid Email");
-             }break;
-         }
+      } else if (checkEmail.length > 0) {
+        for (let i of checkEmail) {
+          if (i === user.email) {
+            navigation("/user");
+          } else {
+            alert("Invalid Email");
+          }
+          break;
+        }
       }
     }
   };

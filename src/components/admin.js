@@ -6,7 +6,7 @@ const Admin = () => {
     name: "",
     email: "",
     gender: "",
-    status :  ""
+    status: "",
   });
   const [intialState, setIntialState] = useState([]);
 
@@ -30,14 +30,12 @@ const Admin = () => {
     });
     const json = await response.json();
     console.log("hii", json);
-    setIntialState(intialState.concat(json))
+    setIntialState(intialState.concat(json));
   };
 
- 
-
-   const onChange = (e) => {
-     setCredentials({ ...credentials, [e.target.name]: e.target.value });
-   };
+  const onChange = (e) => {
+    setCredentials({ ...credentials, [e.target.name]: e.target.value });
+  };
 
   return (
     <>

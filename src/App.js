@@ -1,8 +1,8 @@
-import React from 'react';
-import SignIn from './components/SignIn';
-import User from './components/User';
+import React from "react";
+import SignIn from "./components/SignIn";
+import User from "./components/User";
 import { Routes, Route } from "react-router-dom";
-import Admin from './components/admin';
+import Admin from "./components/admin";
 
 function App() {
   return (
