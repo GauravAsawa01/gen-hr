@@ -43,14 +43,14 @@ const SignIn = () => {
       }
       else if(checkEmail.length>0){
          for (let i of checkEmail) {
-          console.log(user.email);
          
              if (i  === user.email) {
                navigation("/user");
               
-             } else {
-               console.log("first");
-             }
+             } 
+             else{
+              alert("Invalid Email");
+             }break;
          }
       }
     }
@@ -123,6 +123,7 @@ const SignIn = () => {
                 Login
               </button>
             </div>
+            <p>admin@admin.com</p>
           </form>
         </div>
       </div>
